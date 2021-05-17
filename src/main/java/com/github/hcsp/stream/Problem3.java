@@ -1,11 +1,22 @@
 package com.github.hcsp.stream;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 public class Problem3 {
     // 使用流的方法，再把之前的题目做一遍吧
     // 统计一个给定的字符串中，大写英文字母（A,B,C,...,Z）出现的次数。
     // 例如，给定字符串"AaBbCc1234ABC"，返回6，因为该字符串中出现了6次大写英文字母ABCABC
     public static int countUpperCaseLetters(String str) {
-        return 0;
+
+
+
+        return (int)str.chars().mapToObj(ch->(char)ch).filter(Character::isUpperCase).count();
+
+
+
+        //return Arrays.stream(str.toCharArray()).boxed().filter(character -> Character.isUpperCase(character)).count();
+
     }
 
     public static void main(String[] args) {
